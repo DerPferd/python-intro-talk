@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  <meta name="author" content="Jonathan Beaulieu">
+
+  <title>Python Presentation</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="deck.js/core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="python_talk.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck.js/themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="deck.js/core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="deck.js/modernizr.custom.js"></script>
+
+  <link rel="stylesheet" href="highlight/styles/tomorrow-night.css">
+  <script src="highlight/highlight.pack_java_cpp_python.js"></script>
+
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    .container {
+      display: flex;
+    }
+    .subcon {
+      flex-grow: 1;
+      /*margin-right: 1em;*/
+    }
+  </style>
+
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <div class="vcenter">
+        <h1>Python</h1>
+        <br>
+        <h3>Jonathan Beaulieu</h3>
+      </div>
+    </section>
+
+    <section class="slide" id="overview">
+      <h2>Overview</h2>
+      <p></p>
+      <ul>
+        <li class="slide" id="overview-1">What is Python?</li>
+        <li class="slide" id="overview-2">We have C++ and Java. How is Python different?</li>
+        <li class="slide" id="overview-3">Look at some Python Code!</li>
+        <li class="slide" id="overview-4">Q/A</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>What is Python?</h2>
+      <p>Python is/has </p>
+      <ul>
+        <li>Elegant Syntax for Readability</li>
+        <li>Simple and Easy-to-Use</li>
+        <li>Large standard library</li>
+        <li>Interpreted</li>
+        <li>Cross-Platform</li>
+        <li>Extendable by C and C++</li>
+        <li>Open Source :)</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="pythonvs">
+      <h2>Python vs Java and C++</h2>
+      <p></p>
+      <ul>
+        <li class="slide" id="pythonvs-0">Dynamicly Typed
+        <div class="container">
+          <div class="subcon"><pre><code class="python"># Python
+i = 1
+s = "Hello"</code></pre></div>
+          <div class="subcon"><pre><code class="java">// Java
+Integer i = 1;
+String s = "Hello";</code></pre></div>
+          <div class="subcon"><pre><code class="cpp">// C++
+int i = 1;
+string s = "Hello";</code></pre></div>
+        </div></li>
+          <li class="slide" id="pythonvs-1">Control Statements
+          <div class="container">
+            <div class="subcon"><pre><code class="python"># Python
+if a == 2 and b > 8:
+  print("This is if")
+elif b < 8:
+  print("This is elif")
+else:
+  print("This is else")</code></pre></div>
+            <div class="subcon"><pre><code class="java">// Java
+if (a == 2 &amp;&amp; b > 8) {
+  System.out.println("This is if");
+} else if (b < 8) {
+  System.out.println("This is else if");
+} else {
+  System.out.println("This is else");
+}</code></pre></div>
+            <div class="subcon"><pre><code class="cpp">// C++
+if (a == 2 &amp;&amp; b > 8) {
+  cout << "This is if\n";
+} else if (b < 8) {
+  cout << "This is else if\n";
+} else {
+  cout << "This is else\n";
+}</code></pre></div>
+          </div></li>
+      </ul>
+    </section>
+
+    <section class="slide" id="pythonvs1">
+      <h2>Python vs Java and C++</h2>
+      <p></p>
+      <ul>
+        <li class="slide" id="pythonvs1-0">Loops
+        <div class="container">
+          <div class="subcon"><pre><code class="python"># Python
+names = ["Alice", "Bob", "Eve"]
+for name in names:
+  print("It's me:", name)</code></pre></div>
+          <div class="subcon"><pre><code class="java">// Java
+List<String> names = new ArrayList<>();
+names.add("Alice");
+names.add("Bob");
+names.add("Eve");
+for (String name : names) {
+  System.out.println("It's me: " + name);
+}</code></pre></div>
+          <div class="subcon"><pre><code class="cpp">// C++
+vector<string> names = {"Alice", "Bob", "Eve"};
+for (i=names.begin(); i != names.end(); ++i) {
+  cout << "It's me: " << *i << endl;
+}</code></pre></div>
+        </div></li>
+        <li class="slide" id="pythonvs1-1">Functions
+        <div class="container">
+          <div class="subcon"><pre><code class="python"># Python
+def add(a, b):
+  return a + b</code></pre></div>
+          <div class="subcon"><pre><code class="java">// Java
+private Integer add(Integer a, Integer b) {
+  return a + b;
+}</code></pre></div>
+          <div class="subcon"><pre><code class="cpp">// C++
+int add(int a, int b) {
+  return a + b;
+}</code></pre></div>
+        </div></li>
+      </ul>
+    </section>
+
+    <section class="slide" id="pythonvs2">
+      <h2>Python vs Java and C++</h2>
+      <p>How on Earth do I use a for loop like I did in C++/Java?</p>
+      <ul>
+        <li>The "normal" for loop<pre><code class="python">for i in range(20):
+  print i
+</code></pre></li>
+      </ul>
+    </section>
+
+    <section class="slide" id="datatypes">
+      <h2>Some More Python</h2>
+      <p>What other cool data types does Python come with?</p>
+      <ul>
+        <li class="slide" id="datatypes-0">list<pre><code class="python">l = ['hello', "world", 1, 2, 3]
+print l[0]
+print l[-1]
+print l[1:3]
+print l[::2]
+print l[::-1]
+</code></pre></li>
+        <li class="slide" id="datatypes-1">set<pre><code class="python">s1 = set([1, 2, 3])
+s2 = set([3, 4, 5])
+print s1.intersection(s2)  # or s1 &amp; s2
+print s1.union(s2)  # or s1 | s2
+print s1.difference(s2) # or s1 - s2
+</code></pre></li>
+        <li class="slide" id="datatypes-2">dict<pre><code class="python">d = {"a": 1, "b": 2}
+print d["a"]
+print d["b"]
+print d.keys()
+</code></pre></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Some More Python</h2>
+      <p>What about Classes?</p>
+      <ul>
+        <li>Classes<pre><code class="python">#!/usr/bin/python
+
+class Person:
+  INTRO = "Hi, my name is"
+
+  def __init__(self, name):
+    self.name = name
+
+  def say_hello(self):
+    print(INTRO, self.name)
+
+
+alice = Person("Alice")
+bob = Person("Bob")
+alice.say_hello()
+bob.say_hello()</code></pre></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Who uses Python Anyway?</h2>
+      <ul>
+        <li>Reddit</li>
+        <li>YouTube</li>
+        <li>Google</li>
+        <li>Netflex</li>
+        <li>Dropbox</li>
+        <li>Digg</li>
+        <li>...</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Resources for Beginners</h2>
+      <p>NOTE: This is a very limited list Google has more!</p>
+      <ul>
+        <li><a href="https://learnpythonthehardway.org/book/ex0.html">Learn Python the Hard Way</li>
+        <li><a href="http://campus.codeschool.com/courses/try-python">Code School</a></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Sources</h2>
+      <p>https://wiki.python.org/moin/BeginnersGuide/Overview</p>
+      <p>https://www.python.org/dev/peps/pep-0020/</p>
+    </section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="deck.js/jquery.min.js"></script>
+<script src="deck.js/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
